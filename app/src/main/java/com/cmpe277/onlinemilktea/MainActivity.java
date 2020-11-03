@@ -143,9 +143,9 @@ public class MainActivity extends AppCompatActivity {
         // set
         edt_phone.setText(user.getPhoneNumber());
         builder.setView(itemView);
-        builder.setNegativeButton("CANCEL", (dialog, which) -> {
-            dialog.dismiss();
-        });
+//        builder.setNegativeButton("CANCEL", (dialog, which) -> {
+//            dialog.dismiss();
+//        });
         builder.setPositiveButton("Sign In", (dialog, which) -> {
             if (TextUtils.isEmpty(edt_address.getText().toString())) {
                 Toast.makeText(this, "Please enter your address", Toast.LENGTH_SHORT).show();
