@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    // android:checkableBehavior="single"
+    <group android:id="@+id/menu_up"
+        >
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_baseline_home_24"
+            android:title="@string/menu_home" />
+
+        <item
+            android:id="@+id/nav_menu"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="@string/menu_menu" />
+<!--        <item-->
+<!--            android:id="@+id/nav_food_list"-->
+<!--            android:icon="@drawable/ic_baseline_food_bank_24"-->
+<!--            android:title="@string/menu_food_list" />-->
+    </group>
+
+    <group
+        android:id="@+id/menu_bottom">
+
+        <item
+            android:id="@+id/nav_cart"
+            android:icon="@drawable/ic_baseline_shopping_cart_24"
+            android:title="@string/menu_cart" />
+
+        <item
+            android:id="@+id/nav_order"
+            android:icon="@drawable/ic_baseline_file_copy_24"
+            android:title="@string/menu_order" />
+
+    </group>
+
+    <group>
+        <item
+            android:id="@+id/nav_signout"
+            android:icon="@drawable/ic_baseline_exit_to_app_24"
+            android:title="@string/sign_out" />
+    </group>
+
+</menu>

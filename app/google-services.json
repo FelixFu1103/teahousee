@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "137473542959",
+    "firebase_url": "https://teahouse-1b537.firebaseio.com",
+    "project_id": "teahouse-1b537",
+    "storage_bucket": "teahouse-1b537.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:137473542959:android:4ce5b1aea03e66a2bd6fda",
+        "android_client_info": {
+          "package_name": "com.cmpe277.onlinemilktea"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "137473542959-qk0o9oji6luu1apjvmlkg73fsjglu2gr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCog6PsHc-_YNIESAYnny2W9JTFX4DR2iM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "137473542959-qk0o9oji6luu1apjvmlkg73fsjglu2gr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

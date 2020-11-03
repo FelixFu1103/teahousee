@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">onlineMilktea</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_menu">Menu</string>
+    <string name="menu_food_list">Drink List</string>
+
+    <string name="popular_categories">Popular Categories</string>
+    <string name="best_deals">Best Deals</string>
+
+    <string name="food_detail">Food Details</string>
+    <string name="size">Size</string>
+    <string name="topping">Topping</string>
+    <string name="menu_cart">Cart</string>
+    <string name="menu_order">Order</string>
+    <string name="sign_out">Sign out</string>
+    <string name="action_clear_cart">Clear Cart</string>
+    <string name="menu_profile">Profile</string>
+
+</resources>
