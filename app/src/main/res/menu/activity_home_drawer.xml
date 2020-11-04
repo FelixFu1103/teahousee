@@ -10,7 +10,9 @@
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_baseline_home_24"
             android:title="@string/menu_home" />
-
+    </group>
+    <group
+        android:id="@+id/menu_menu">
         <item
             android:id="@+id/nav_menu"
             android:icon="@drawable/ic_menu_gallery"
@@ -22,13 +24,16 @@
     </group>
 
     <group
-        android:id="@+id/menu_bottom">
+        android:id="@+id/menu_cart">
 
         <item
             android:id="@+id/nav_cart"
             android:icon="@drawable/ic_baseline_shopping_cart_24"
             android:title="@string/menu_cart" />
+    </group>
 
+    <group
+        android:id="@+id/menu_order">
         <item
             android:id="@+id/nav_order"
             android:icon="@drawable/ic_baseline_file_copy_24"
