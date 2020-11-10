@@ -32,6 +32,12 @@
         tools:layout="@layout/fragment_food_detail" />
 
     <fragment
+        android:id="@+id/view_order"
+        android:name="com.cmpe277.onlinemilktea.ui.view_order.ViewOrderFragment"
+        android:label="@string/menu_order"
+        tools:layout="@layout/fragment_view_order" />
+
+    <fragment
         android:id="@+id/nav_cart"
         android:name="com.cmpe277.onlinemilktea.ui.cart.CartFragment"
         android:label="@string/menu_cart"

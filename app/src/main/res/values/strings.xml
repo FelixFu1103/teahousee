@@ -19,7 +19,7 @@
     <string name="size">Size</string>
     <string name="topping">Topping</string>
     <string name="menu_cart">Cart</string>
-    <string name="menu_order">Order</string>
+    <string name="menu_order">View Order</string>
     <string name="sign_out">Sign out</string>
     <string name="action_clear_cart">Clear Cart</string>
     <string name="menu_profile">Profile</string>

@@ -57,8 +57,8 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
-
-public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+// implements NavigationView.OnNavigationItemSelectedListener
+public class HomeActivity extends AppCompatActivity  {
 
     private AppBarConfiguration mAppBarConfiguration;
     private NavController navController;
@@ -104,7 +104,8 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_menu, R.id.nav_food_detail, R.id.nav_cart)
+                R.id.nav_home, R.id.nav_menu, R.id.nav_food_detail, R.id.nav_cart,
+                R.id.view_order)
                 .setDrawerLayout(drawer)
                 .build();
 
@@ -113,25 +114,13 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         NavigationUI.setupWithNavController(navigationView, navController);
         countCartItem();
 
-        navigationView.setNavigationItemSelectedListener(this);
+//        navigationView.setNavigationItemSelectedListener(this);
         navigationView.bringToFront();
         navigationView.getMenu().findItem(R.id.nav_signout).setOnMenuItemClickListener(menuItem -> {
            signout();
             //Toast.makeText(this, "sign out clicked", Toast.LENGTH_SHORT).show();
             return true;
         });
-
-
-
-//        navigationView.getMenu().findItem(R.id.nav_cart).setOnMenuItemClickListener(menuItem -> {
-//
-//            //Toast.makeText(this, "cart clicked", Toast.LENGTH_SHORT).show();
-////            menuItem.setChecked(true);
-////            drawer.closeDrawers();
-////            navController.navigate(R.id.nav_cart);
-//
-//            return true;
-//        });
 
         View headerView = navigationView.getHeaderView(0);
         TextView txt_user = (TextView) headerView.findViewById(R.id.txt_user);
@@ -142,24 +131,27 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
     }
     //CartDataSource cartDataSource = new LocalCartDataSource(CartDatabase.getInstance(this).cartDAO());
 
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-        menuItem.setChecked(true);
-        drawer.closeDrawers();
-        switch(menuItem.getItemId()) {
-
-            case R.id.nav_cart:
-                navController.navigate(R.id.nav_cart);
-                break;
-            case R.id.nav_menu:
-                navController.navigate(R.id.nav_menu);
-                break;
-            case R.id.nav_home:
-                navController.navigate(R.id.nav_home);
-                break;
-        }
-        return true;
-    }
+//    @Override
+//    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+//        menuItem.setChecked(true);
+//        drawer.closeDrawers();
+//        switch(menuItem.getItemId()) {
+//
+//            case R.id.nav_cart:
+//                navController.navigate(R.id.nav_cart);
+//                break;
+//            case R.id.nav_menu:
+//                navController.navigate(R.id.nav_menu);
+//                break;
+//            case R.id.view_order:
+//                navController.navigate(R.id.view_order);
+//                break;
+//            case R.id.nav_home:
+//                navController.navigate(R.id.nav_home);
+//                break;
+//        }
+//        return true;
+//    }
 
     private void signout() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);

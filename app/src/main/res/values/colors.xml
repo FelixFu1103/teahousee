@@ -7,4 +7,6 @@
     <color name="overlay_color">#55333639</color>
 
     <color name="border_color">#AA333639</color>
+    <color name="dialog_header_color">#c5c5c5</color>
+    <color name="alert_button_color">#33B5E5</color>
 </resources>
