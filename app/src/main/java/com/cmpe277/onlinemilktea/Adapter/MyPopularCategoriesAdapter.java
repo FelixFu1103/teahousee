@@ -10,7 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.cmpe277.onlinemilktea.Callback.IRecyclerClickListener;
+import com.cmpe277.onlinemilktea.Interface.IRecyclerClickListener;
 import com.cmpe277.onlinemilktea.EventBus.PopularCategoryClick;
 import com.cmpe277.onlinemilktea.Model.PopularCategoryModel;
 import com.cmpe277.onlinemilktea.R;

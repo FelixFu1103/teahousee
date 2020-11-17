@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.cmpe277.onlinemilktea.Adapter.MyOrdersAdapter;
-import com.cmpe277.onlinemilktea.Callback.ILoadOrderCallbackListener;
+import com.cmpe277.onlinemilktea.Interface.ILoadOrderCallbackListener;
 import com.cmpe277.onlinemilktea.Common.Common;
 import com.cmpe277.onlinemilktea.Model.Order;
 import com.cmpe277.onlinemilktea.R;

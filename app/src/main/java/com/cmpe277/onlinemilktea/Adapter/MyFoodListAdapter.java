@@ -8,19 +8,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
-import com.cmpe277.onlinemilktea.Callback.IRecyclerClickListener;
+import com.cmpe277.onlinemilktea.Interface.IRecyclerClickListener;
 import com.cmpe277.onlinemilktea.Common.Common;
 import com.cmpe277.onlinemilktea.Database.CartDataSource;
 import com.cmpe277.onlinemilktea.Database.CartDatabase;
-import com.cmpe277.onlinemilktea.Database.CartItem;
 import com.cmpe277.onlinemilktea.Database.LocalCartDataSource;
-import com.cmpe277.onlinemilktea.EventBus.CounterCartEvent;
 import com.cmpe277.onlinemilktea.EventBus.FoodItemClick;
 import com.cmpe277.onlinemilktea.Model.FoodModel;
 import com.cmpe277.onlinemilktea.R;
@@ -31,12 +28,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
-import io.reactivex.Scheduler;
-import io.reactivex.SingleObserver;
-import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
-import io.reactivex.disposables.Disposable;
-import io.reactivex.schedulers.Schedulers;
 
 public class MyFoodListAdapter  extends RecyclerView.Adapter<MyFoodListAdapter.MyViewHolder> {
     private Context context ;

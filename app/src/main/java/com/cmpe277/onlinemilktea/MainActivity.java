@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.cmpe277.onlinemilktea.Common.Common;
 import com.cmpe277.onlinemilktea.Model.UserModel;
+import com.cmpe277.onlinemilktea.service.MyFCMService;
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.IdpResponse;
 import com.firebase.ui.auth.data.model.User;
@@ -31,6 +32,10 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.installations.FirebaseInstallations;
+import com.google.firebase.messaging.FirebaseMessaging;
+import com.google.firebase.messaging.FirebaseMessagingService;
 
 import java.util.Arrays;
 import java.util.List;
@@ -104,6 +109,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void checkUserFromFirebase(FirebaseUser user) {
        dialog.show();
+
         userRef.child(user.getUid())
                 .addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
@@ -166,6 +172,7 @@ public class MainActivity extends AppCompatActivity {
             userModel.setAddress(edt_address.getText().toString());
             userModel.setPhone(edt_phone.getText().toString());
 
+
             userRef.child(user.getUid()).setValue(userModel)
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
@@ -191,6 +198,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void goToHomeActivity(UserModel userModel) {
+
+                FirebaseInstanceId.getInstance().getInstanceId()
+                .addOnFailureListener(e -> {
+                    Toast.makeText(this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+
+                    Common.currentUser = userModel; // Important, you need alwayw assign value for it before use
+
+                    startActivity(new Intent(MainActivity.this, HomeActivity.class));
+                    finish();
+
+                })
+                .addOnCompleteListener(task -> {
+                    String token = "";
+                    Common.currentUser = userModel; // Important, you need always assign value for it before use
+                    token = task.getResult().getToken();
+                    Common.currentToken = token;
+                    Common.updateToken(MainActivity.this, task.getResult().getToken());
+                    startActivity(new Intent(MainActivity.this, HomeActivity.class));
+                    finish();
+
+                });
         Common.currentUser = userModel;
 
         // startActivity
