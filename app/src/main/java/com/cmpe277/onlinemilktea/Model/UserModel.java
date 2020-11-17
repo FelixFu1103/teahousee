@@ -7,7 +7,7 @@ public class UserModel {
 
     }
 
-    public UserModel(String uid, String name, String address, String phone) {
+    public UserModel(String uid, String name, String address, String phone, String email) {
         this.uid = uid;
         this.name = name;
         this.address = address;

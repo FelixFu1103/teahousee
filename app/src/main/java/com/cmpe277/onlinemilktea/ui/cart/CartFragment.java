@@ -26,8 +26,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.cmpe277.onlinemilktea.Adapter.MyCartAdapter;
-import com.cmpe277.onlinemilktea.Adapter.MyFoodListAdapter;
-import com.cmpe277.onlinemilktea.Callback.ILoadTimeFromFirebaseListener;
+import com.cmpe277.onlinemilktea.Interface.ILoadTimeFromFirebaseListener;
 import com.cmpe277.onlinemilktea.Common.Common;
 import com.cmpe277.onlinemilktea.Common.MySwipeHelper;
 import com.cmpe277.onlinemilktea.Database.CartDataSource;
@@ -37,10 +36,8 @@ import com.cmpe277.onlinemilktea.Database.LocalCartDataSource;
 import com.cmpe277.onlinemilktea.EventBus.CounterCartEvent;
 import com.cmpe277.onlinemilktea.EventBus.HideFabCart;
 import com.cmpe277.onlinemilktea.EventBus.UpdateItemInCart;
-import com.cmpe277.onlinemilktea.Model.FoodModel;
 import com.cmpe277.onlinemilktea.Model.Order;
 import com.cmpe277.onlinemilktea.R;
-import com.cmpe277.onlinemilktea.ui.foodlist.FoodListViewModel;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -51,7 +48,6 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
-import java.security.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -60,7 +56,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
-import io.reactivex.Scheduler;
 import io.reactivex.SingleObserver;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.annotations.NonNull;
@@ -69,7 +64,6 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
 import static android.widget.Toast.makeText;
-import static java.lang.System.currentTimeMillis;
 
 public class CartFragment extends Fragment implements ILoadTimeFromFirebaseListener {
 

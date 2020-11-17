@@ -1,12 +1,11 @@
 package com.cmpe277.onlinemilktea.ui.home;
 
 import androidx.annotation.NonNull;
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.cmpe277.onlinemilktea.Callback.IBestDealCallbackListener;
-import com.cmpe277.onlinemilktea.Callback.IPopularCallbackListener;
+import com.cmpe277.onlinemilktea.Interface.IBestDealCallbackListener;
+import com.cmpe277.onlinemilktea.Interface.IPopularCallbackListener;
 import com.cmpe277.onlinemilktea.Common.Common;
 import com.cmpe277.onlinemilktea.Model.BestDealModel;
 import com.cmpe277.onlinemilktea.Model.PopularCategoryModel;
