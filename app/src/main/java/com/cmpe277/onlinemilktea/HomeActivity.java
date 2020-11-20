@@ -1,18 +1,23 @@
 package com.cmpe277.onlinemilktea;
 
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.MenuItem;
-import android.view.View;
 import android.view.Menu;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
+
 import com.andremion.counterfab.CounterFab;
-import com.cmpe277.onlinemilktea.Adapter.MyCartAdapter;
 import com.cmpe277.onlinemilktea.Common.Common;
 import com.cmpe277.onlinemilktea.Database.CartDataSource;
 import com.cmpe277.onlinemilktea.Database.CartDatabase;
@@ -26,24 +31,13 @@ import com.cmpe277.onlinemilktea.EventBus.PopularCategoryClick;
 import com.cmpe277.onlinemilktea.EventBus.UpdateItemInCart;
 import com.cmpe277.onlinemilktea.Model.CategoryModel;
 import com.cmpe277.onlinemilktea.Model.FoodModel;
-import com.cmpe277.onlinemilktea.ui.cart.CartFragment;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-
-import androidx.appcompat.app.AlertDialog;
-import androidx.navigation.NavController;
-import androidx.navigation.Navigation;
-import androidx.navigation.ui.AppBarConfiguration;
-import androidx.navigation.ui.NavigationUI;
-import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -105,7 +99,7 @@ public class HomeActivity extends AppCompatActivity  {
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_menu, R.id.nav_food_detail, R.id.nav_cart,
-                R.id.view_order, R.id.map_view)
+                R.id.view_order)
                 .setDrawerLayout(drawer)
                 .build();
 
@@ -121,7 +115,7 @@ public class HomeActivity extends AppCompatActivity  {
         });
 
         navigationView.getMenu().findItem(R.id.map_house).setOnMenuItemClickListener(menuItem -> {
-            signout(); // change to something to call the fragment
+            navController.navigate(R.id.map_view);
             return true;
         });
         View headerView = navigationView.getHeaderView(0);

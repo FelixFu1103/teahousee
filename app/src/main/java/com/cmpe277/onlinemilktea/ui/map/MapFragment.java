@@ -43,25 +43,14 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, Locatio
     private static final int DEFAULT_ZOOM = 15;
     private LatLng latLng;
 
-   private static MapFragment mapFragment = null;
 
     private TextView tx = null;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        initView();
+       // initView();
         return inflater.inflate(R.layout.layout_map, container, false);
     }
-
-    private void initView() {
-//        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this.getContext());
-//        mapView = (MapView) view.findViewById(R.id.map_fragment);
-//        mapView.onResume();
-//        mapView.getMapAsync(this);
-        tx = (TextView) tx.findViewById(R.id.tx);
-        tx.setText("Hello");
-    }
-
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -140,18 +129,18 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, Locatio
          * cases when a location is not available.
          */
         try {
-            //         if (locationPermissionGranted) {
             locationResult = fusedLocationProviderClient.getLastLocation();
             locationResult.addOnCompleteListener(this.getActivity(), task -> {
                 if (task.isSuccessful()) {
                     // Set the map's camera position to the current location of the device.
                     lastKnownLocation = task.getResult();
-                    Log.d("abc", String.valueOf(lastKnownLocation));
                     if (lastKnownLocation != null) {
                         latLng = new LatLng(lastKnownLocation.getLatitude(), lastKnownLocation.getLongitude());
+                        Log.d("DDDD", String.valueOf(latLng));
+                        LatLng latLng1 = new LatLng(37.4,-122.09);
                         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
                                 latLng, DEFAULT_ZOOM));
-                        mMap.addMarker(new MarkerOptions().title("my location").position(latLng).title("current position").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+                        mMap.addMarker(new MarkerOptions().title("my location").position(latLng).title("current position").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
                     }
                 } else {
                     Log.d(TAG, "Current location is null. Using defaults.");
