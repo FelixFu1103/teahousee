@@ -125,29 +125,6 @@ public class HomeActivity extends AppCompatActivity  {
         TextView txt_email = (TextView) headerView.findViewById(R.id.txt_email);
         Common.setSpanString("Your email: ", Common.currentUser.getEmail(), txt_email);
     }
-    //CartDataSource cartDataSource = new LocalCartDataSource(CartDatabase.getInstance(this).cartDAO());
-
-//    @Override
-//    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-//        menuItem.setChecked(true);
-//        drawer.closeDrawers();
-//        switch(menuItem.getItemId()) {
-//
-//            case R.id.nav_cart:
-//                navController.navigate(R.id.nav_cart);
-//                break;
-//            case R.id.nav_menu:
-//                navController.navigate(R.id.nav_menu);
-//                break;
-//            case R.id.view_order:
-//                navController.navigate(R.id.view_order);
-//                break;
-//            case R.id.nav_home:
-//                navController.navigate(R.id.nav_home);
-//                break;
-//        }
-//        return true;
-//    }
 
     private void signout() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -400,9 +377,9 @@ public class HomeActivity extends AppCompatActivity  {
 
                     @Override
                     public void onError(@NonNull Throwable e) {
-                        if (!e.getMessage().contains("Query returned empty"))
-                            Toast.makeText(HomeActivity.this, "[COUNT CART]"+e.getMessage(), Toast.LENGTH_SHORT).show();
-                        else
+//                        if (!e.getMessage().contains("Query returned empty"))
+//                           Toast.makeText(HomeActivity.this, "[COUNT CART]"+e.getMessage(), Toast.LENGTH_SHORT).show();
+//                        else
                             fab.setCount(0);
                     }
                 });

@@ -420,7 +420,7 @@ public class CartFragment extends Fragment implements ILoadTimeFromFirebaseListe
 
                         @Override
                         public void onError(@NonNull Throwable e) {
-                            makeText(getContext(), "[UPDATE CART]"+e.getMessage(), Toast.LENGTH_SHORT).show();
+                           // makeText(getContext(), "[UPDATE CART]"+e.getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     });
         }
@@ -444,7 +444,7 @@ public class CartFragment extends Fragment implements ILoadTimeFromFirebaseListe
 
                     @Override
                     public void onError(@NonNull Throwable e) {
-                        makeText(getContext(), "[SUM CART]"+e.getMessage(), Toast.LENGTH_SHORT).show();
+                        //makeText(getContext(), "[SUM CART]"+e.getMessage(), Toast.LENGTH_SHORT).show();
 
                     }
                 });

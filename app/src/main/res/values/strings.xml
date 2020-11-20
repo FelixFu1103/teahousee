@@ -23,6 +23,6 @@
     <string name="sign_out">Sign out</string>
     <string name="action_clear_cart">Clear Cart</string>
     <string name="menu_profile">Profile</string>
-    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyBo3AwBb5z4SRt1HtYvPXEblOp3IL-my9g</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">[Your google maps API KEY]</string>
 
 </resources>

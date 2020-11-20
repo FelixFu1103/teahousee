@@ -15,6 +15,7 @@ import androidx.annotation.Nullable;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
+import com.cmpe277.onlinemilktea.EventBus.HideFabCart;
 import com.cmpe277.onlinemilktea.R;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationListener;
@@ -28,6 +29,8 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.snackbar.Snackbar;
+
+import org.greenrobot.eventbus.EventBus;
 
 import static android.content.ContentValues.TAG;
 
@@ -55,6 +58,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, Locatio
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        EventBus.getDefault().postSticky(new HideFabCart(true));
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this.getContext());
         mapView = (MapView) view.findViewById(R.id.map_fragment);
         mapView.onCreate(savedInstanceState);
@@ -62,6 +66,11 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, Locatio
         mapView.getMapAsync(this);
     }
 
+    @Override
+    public void onStop() {
+        EventBus.getDefault().postSticky(new HideFabCart(false));
+        super.onStop();
+    }
     private void getLocationPermission() {
         /*
          * Request location permission, so that we can get the location of the
@@ -140,7 +149,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, Locatio
                         LatLng latLng1 = new LatLng(37.4,-122.09);
                         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(
                                 latLng, DEFAULT_ZOOM));
-                        mMap.addMarker(new MarkerOptions().title("my location").position(latLng).title("current position").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
+                        mMap.addMarker(new MarkerOptions().title("my location").position(latLng).title("Tea House").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
                     }
                 } else {
                     Log.d(TAG, "Current location is null. Using defaults.");
