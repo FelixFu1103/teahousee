@@ -38,6 +38,12 @@
         tools:layout="@layout/fragment_view_order" />
 
     <fragment
+        android:id="@+id/map_view"
+        android:name="com.cmpe277.onlinemilktea.ui.map.MapFragment"
+        android:label="Map View"
+        tools:layout="@layout/layout_map" />
+
+    <fragment
         android:id="@+id/nav_cart"
         android:name="com.cmpe277.onlinemilktea.ui.cart.CartFragment"
         android:label="@string/menu_cart"

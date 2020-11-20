@@ -43,7 +43,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, Locatio
     private static final int DEFAULT_ZOOM = 15;
     private LatLng latLng;
 
-    private static MapFragment mapFragment = null;
+   private static MapFragment mapFragment = null;
 
     private TextView tx = null;
     @Nullable
@@ -60,7 +60,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, Locatio
 //        mapView.getMapAsync(this);
         tx = (TextView) tx.findViewById(R.id.tx);
         tx.setText("Hello");
-
     }
 
 
@@ -132,7 +131,6 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, Locatio
         } catch (SecurityException e) {
             Log.e("Exception: %s", e.getMessage());
         }
-
     }
 
     public Location getDeviceLocation() {
