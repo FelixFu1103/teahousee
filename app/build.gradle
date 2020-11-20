@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
-//apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.gms.google-services'
 
 
 
@@ -49,6 +49,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth:20.0.0'
     implementation 'com.google.firebase:firebase-database:19.5.1'
     implementation 'com.google.firebase:firebase-messaging:21.0.0'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
 
 //    implementation 'com.google.firebase:firebase-database:19.5.1'
 //    implementation 'com.google.firebase:firebase-auth:20.0.0'
@@ -85,6 +86,6 @@ dependencies {
 
     implementation 'androidx.room:room-rxjava2:2.2.0-rc01'
     annotationProcessor 'androidx.room:room-compiler:2.2.0-rc01'
-
+    implementation 'com.google.android.gms:play-services-location:17.1.0'
 
 }

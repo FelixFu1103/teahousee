@@ -23,5 +23,6 @@
     <string name="sign_out">Sign out</string>
     <string name="action_clear_cart">Clear Cart</string>
     <string name="menu_profile">Profile</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyA1rYAa_hBeLkSnKYmtXO7dtR5l8VboMS4</string>
 
 </resources>

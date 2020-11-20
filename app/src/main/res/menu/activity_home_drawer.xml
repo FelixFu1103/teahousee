@@ -22,7 +22,6 @@
 
     <group
         android:id="@+id/menu_cart">
-
         <item
             android:id="@+id/nav_cart"
             android:icon="@drawable/ic_baseline_shopping_cart_24"
@@ -35,6 +34,15 @@
             android:id="@+id/view_order"
             android:icon="@drawable/ic_baseline_file_copy_24"
             android:title="@string/menu_order" />
+
+    </group>
+
+    <group
+        android:id="@+id/map_teahouse">
+        <item
+            android:id="@+id/map_house"
+            android:icon="@drawable/ic_baseline_account_circle_24"
+            android:title="Map" />
 
     </group>
 

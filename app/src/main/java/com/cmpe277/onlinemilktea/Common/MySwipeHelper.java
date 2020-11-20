@@ -36,8 +36,6 @@ import java.util.Queue;
 
 
 public abstract class MySwipeHelper extends ItemTouchHelper.SimpleCallback {
-
-
     int buttonWidth;
     private RecyclerView recyclerView;
     private List<MyButton> buttonList;

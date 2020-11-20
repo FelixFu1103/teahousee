@@ -48,7 +48,6 @@ public class MyFoodListAdapter  extends RecyclerView.Adapter<MyFoodListAdapter.M
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new MyViewHolder( LayoutInflater.from( context )
                 .inflate(R.layout.layout_food_item,parent,false));
-
     }
 
     @Override
