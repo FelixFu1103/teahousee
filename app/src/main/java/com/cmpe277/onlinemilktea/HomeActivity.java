@@ -105,7 +105,7 @@ public class HomeActivity extends AppCompatActivity  {
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.nav_home, R.id.nav_menu, R.id.nav_food_detail, R.id.nav_cart,
-                R.id.view_order, R.id.map_teahouse)
+                R.id.view_order)
                 .setDrawerLayout(drawer)
                 .build();
 
@@ -114,14 +114,16 @@ public class HomeActivity extends AppCompatActivity  {
         NavigationUI.setupWithNavController(navigationView, navController);
         countCartItem();
 
-//        navigationView.setNavigationItemSelectedListener(this);
         navigationView.bringToFront();
         navigationView.getMenu().findItem(R.id.nav_signout).setOnMenuItemClickListener(menuItem -> {
            signout();
-            //Toast.makeText(this, "sign out clicked", Toast.LENGTH_SHORT).show();
-            return true;
+           return true;
         });
 
+        navigationView.getMenu().findItem(R.id.map_house).setOnMenuItemClickListener(menuItem -> {
+            signout(); // change to something to call the fragment
+            return true;
+        });
         View headerView = navigationView.getHeaderView(0);
         TextView txt_user = (TextView) headerView.findViewById(R.id.txt_user);
         Common.setSpanString("Hey, ", Common.currentUser.getName(), txt_user);

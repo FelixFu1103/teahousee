@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -44,12 +45,24 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, Locatio
 
     private static MapFragment mapFragment = null;
 
-
+    private TextView tx = null;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        initView();
         return inflater.inflate(R.layout.layout_map, container, false);
     }
+
+    private void initView() {
+//        fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this.getContext());
+//        mapView = (MapView) view.findViewById(R.id.map_fragment);
+//        mapView.onResume();
+//        mapView.getMapAsync(this);
+        tx = (TextView) tx.findViewById(R.id.tx);
+        tx.setText("Hello");
+
+    }
+
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {

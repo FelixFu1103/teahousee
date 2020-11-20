@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth.AuthStateListener listener;
     private AlertDialog dialog;
     private CompositeDisposable compositeDisposable = new CompositeDisposable();
-    //private ICloudFunctions cloudFunctions;
 
     private DatabaseReference userRef;
 
