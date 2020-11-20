@@ -1,7 +1,7 @@
 # Tea House online ordering Android Application
 
 ### In order to run it
-  - Go to res/values/strings add your google maps API KEY to the placeholder
+  - Go to app/src/main/res/values/strings add your google maps API KEY to the placeholder
   - Then map will show as expected
 
 How you can get your api keys:
